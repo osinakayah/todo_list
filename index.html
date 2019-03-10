@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Todo List</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" style="margin-left: 0; width: 100%">
+                    <div class="row nav-bar">
+                        <div class="col-offset-lg-1 col-lg-3">
+                            <a class="nav-bar-brand">Todo List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 1%">
+                <div class="col-lg-3 col-md-3 col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <p>
+                                Projects
+                                <i id="myBtn" class="far fa-plus-square" style="float: right;font-size: x-large;"></i>
+                            </p>
+
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group" id="projects-ul">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-10">
+                    <ul class="tabs" style="margin-bottom: 1%; margin-top: 1.3%">
+
+                        <li class="tab active">
+                            <a href="#">Tasks</a>
+                        </li>
+                        <li class="tab" style="display: none">
+                            <a href="#">Completed</a>
+                        </li>
+
+                    </ul>
+                    <div class="panel message-detail-view-container">
+                        <div class="message-detail-view-heading">
+                            <div class="row">
+                                <div class="col-2">
+                                    <button id="taskmyBtn">Create Task</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-detail-view">
+
+                            <table style="width: 100%; text-align: center" >
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Due Date</th>
+                                    <th>Priority</th>
+
+                                    <th>Date Created</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody id="task-list-table-body">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-offset-lg-4 col-lg-4 col-offset-md-4 col-md-4 col-offset-sm-4 col-sm-4  col-12">
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+
+                            <div class="form_container">
+                                <p class="title" style="text-align: center">Create Project <br/> </p>
+
+                                <form class="sign_up_form">
+                                    <div class="row">
+                                        <div class="col-12 form-group">
+                                            <label>Project Name</label>
+                                            <input type="text" id="new-project-name">
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <button type="button" id="create-project-button">Create Project</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-offset-lg-4 col-lg-4 col-offset-md-4 col-md-4 col-offset-sm-4 col-sm-4  col-12">
+                    <div id="task-myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+
+                            <div class="form_container">
+                                <p class="title" style="text-align: center"> Task <br/> </p>
+
+                                <form class="sign_up_form">
+                                    <input type="hidden" value="-1" id="project_task_relation_id">
+                                    <input type="hidden" value="-1" id="existing_task_id">
+                                    <div class="row">
+                                        <div class="col-12 form-group">
+                                            <label>Task Name</label>
+                                            <input type="text" id="new-task-name">
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Description</label>
+                                            <input type="text" id="new-task-desc">
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Due Date</label>
+                                            <input type="date" id="new-task-due-date">
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <label>Priority</label>
+                                            <select id="new-task-priority" style="width: 100%">
+                                                <option>Least Important</option>
+                                                <option>Important</option>
+                                                <option>Very Important</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12 form-group">
+                                            <button type="button" id="create-task-button">Save Task</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="js/index.js"></script>
+    </body>
+</html>
